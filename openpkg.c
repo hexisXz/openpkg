@@ -22,7 +22,7 @@ int main ( int argc, char **argv) {
        
        char command[1000];
 
-       sprintf(command, "wget -q --show-progress --progress=bar:force 2>&1 https://raw.githubusercontent.com/hexisXz/scoria-repo/main/%s/%s-pkg && sh %s-pkg ", install, install, install);
+       sprintf(command, "wget -q --show-progress --progress=bar:force 2>&1 https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/%s/ins && sh ins && rm ins", install, install, install);
        
        system(command);
 
@@ -33,7 +33,7 @@ int main ( int argc, char **argv) {
      case 'h':
      printf("-i: install program\n"
      "-R: remove a program\n"
-     "-U: update scoria\n");
+     "-U: update openpkg\n");
        break;
     
      case 'R':
@@ -41,7 +41,7 @@ int main ( int argc, char **argv) {
        printf("uninstalling.. %s\n", remove);
                 
        char RemoveCommand[1000];
-       sprintf(RemoveCommand, "wget --show-progress 'https://raw.githubusercontent.com/hexisXz/scoria-repo/main/%s/uninstall' && sh uninstall && rm uninstall", remove);
+       sprintf(RemoveCommand, "wget --show-progress 'https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/%s/uninstall' && sh uninstall && rm uninstall", remove);
                 
        system(RemoveCommand);
        break;
@@ -51,7 +51,7 @@ int main ( int argc, char **argv) {
       uninstall = optarg;
 
       char UninstallCommand[1000];
-      sprintf(UninstallCommand, "exec ~/.config/scoria/update/update");
+      sprintf(UninstallCommand, "exec ~/.config/openpkg/update/update");
 
       system(UninstallCommand); 
        break;
