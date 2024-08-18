@@ -25,7 +25,7 @@ copy and paste
 
 
 ```sh 
-sh <(curl -v -L https://raw.githubusercontent.com/hexisXz/scoria/main/install.sh)
+curl https://raw.githubusercontent.com/hexisXz/openpkg/main/install.sh | sh
 ```
 
 in your terminal
