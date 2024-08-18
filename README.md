@@ -15,7 +15,7 @@
 # **openpkg**
 
 # PLEASE READ
-openpkg wont have a lot of packages untill me or other people who would like to contribute add packages to the openpkg-repo but soon this will have tons of packages and hopfully it wont be a pain to find/install programs on openBSD
+openpkg wont have a lot of packages untill me or other people who would  like to contribute add packages to the openpkg-repo but soon this will  have tons of packages and hopefully it wont be a pain to find/install  programs on openBSD
 
 <a id="org045f10a"></a>
 
