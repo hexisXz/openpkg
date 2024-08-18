@@ -35,7 +35,7 @@ in your terminal
 
 # **openpkg repo**
 
-<https://github.com/hexisXz/scoria-repo>
+<https://github.com/hexisXz/openpkg-repo>
 
 
 
