@@ -1,0 +1,6 @@
+#!/bin/bash
+
+echo -e "updating..."
+
+doas rm /usr/local/bin/openpkg && sudo rm -r ~/.config/openpkg && echo -e "hexpmg will now reinstall." && sh <(curl -v -L https://raw.githubusercontent.com/hexisXz/openpkg/main/install.sh)
+
