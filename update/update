@@ -2,5 +2,5 @@
 
 printf "updating...\n"
 
-doas rm /usr/local/bin/openpkg && sudo rm -r ~/.config/openpkg && printf "hexpmg will now reinstall.\n" && ftp https://raw.githubusercontent.com/hexisXz/openg/main/install && chmod +x install && sh install
+doas rm /usr/local/bin/openpkg && sudo rm -r ~/.config/openpkg && printf "hexpmg will now reinstall.\n" && ftp https://raw.githubusercontent.com/hexisXz/openg/openpkg/install.sh && chmod +x install.sh && sh install.sh
 

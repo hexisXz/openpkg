@@ -18,7 +18,7 @@ a simple openBSD package manager
 
 # **how to install**
 ```sh 
-
+ftp https://raw.githubusercontent.com/hexisXz/openpkg/main/install.sh && chmod +x install.sh && sh install.sh
 ```
 
 <a id="org5bc342d"></a>
