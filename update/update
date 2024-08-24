@@ -1,6 +1,6 @@
-#!/bin/bash
+#!/bin/sh
 
-echo -e "updating..."
+printf "updating...\n"
 
-doas rm /usr/local/bin/openpkg && sudo rm -r ~/.config/openpkg && echo -e "hexpmg will now reinstall." && sh <(curl -v -L https://raw.githubusercontent.com/hexisXz/openpkg/main/install.sh)
+doas rm /usr/local/bin/openpkg && sudo rm -r ~/.config/openpkg && printf "hexpmg will now reinstall.\n" && ftp https://raw.githubusercontent.com/hexisXz/openg/main/install && chmod +x install && sh install
 

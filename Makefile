@@ -1,5 +1,5 @@
-install: openpkg.c openpkg
-	doas mv ./openpkg/openpkg /usr/local/bin/ && gcc openpkg.c -o openpkg
+install:
+	chmod +x openpkg && doas mv ./openpkg /usr/local/bin/
 
 uninstall:
 	doas rm /usr/local/bin/openpkg && doas rm -r ~/.config/openpkg && echo "uninstalled." || echo "ERROR."
