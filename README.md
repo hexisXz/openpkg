@@ -25,7 +25,7 @@ ftp https://raw.githubusercontent.com/hexisXz/openpkg/main/install.sh && chmod +
 
 # **openpkg repo**
 
-<https://github.com/hexisXz/scoria-repo>
+<https://github.com/hexisXz/openpkg-repo>
 
 
 <a id="org0fde68a"></a>
