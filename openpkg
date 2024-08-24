@@ -37,7 +37,7 @@ clean() {
 install() {
   clean
   printf "${GREEN}INSTALLING...\n"
-  ftp -m -C https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/$2/install && chmod +x install && sh install
+  ftp -m -C https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/$3/install && chmod +x install && sh install
   printf "${GREEN}DONE\n"
   clean
 }
@@ -47,7 +47,7 @@ uninstall() {
   printf "${RED}ARE YOU SURE YOU WANT TO REMOVE $2 (y/n)\n"
   read i
   if [ "$i" = "y" ]; then
-    ftp -m -C https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/$2/uninstall && chmod +x uninstall && sh uninstall && clean
+    ftp -m -C https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/$3/uninstall && chmod +x uninstall && sh uninstall && clean
     printf "${RED}$2 HAS been removed\n"
   else
     printf "${RED}$2 has NOT been removed\n"
