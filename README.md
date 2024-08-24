@@ -1,14 +1,10 @@
 
 # Table of Contents
 
-1.  [**scoria**](#org018ad28)
+1.  [**openpkg**](#org018ad28)
 2.  [**how to install**](#org045f10a)
-3.  [**scoria repo**](#org5bc342d)
-4.  [**new**](#orgb149e50)
-5.  [scoria is not a replacement](#orgd87cbbc)
-6.  [About scoria](#org0fde68a)
-7.  [more info](#org22f01f6)
-
+3.  [**openpkg repo**](#org5bc342d)
+4.  [About openpkg](#org0fde68a)
 
 
 <a id="org018ad28"></a>
