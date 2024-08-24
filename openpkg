@@ -1,12 +1,12 @@
 #!/bin/sh
 
-#info 
+# Info 
 about="package manager for openBSD\n"
 ver="0.3\n"
 maintainer="hexisXz/Quinn Kelly\n"
 name="openpkg\n"
 
-# colors
+# Colors
 RESET=$(printf '\033[0m')
 BOLD=$(printf '\033[1m')
 UNDERLINE=$(printf '\033[4m')
@@ -27,54 +27,55 @@ BG_MAGENTA=$(printf '\033[45m')
 BG_CYAN=$(printf '\033[46m')
 BG_WHITE=$(printf '\033[47m')
 
-
-#clean install & uninstall scripts off of the system
+# Clean install & uninstall scripts off of the system
 clean() {
-  rm uninstall && rm install
+  rm -f uninstall install
 }
 
-#install a package
+# Install a package
 install() {
   clean
-  printf "${GREEN}INSTALLING...\n"
-  ftp -m -C https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/$3/install && chmod +x install && sh install
+  if [ -z "$2" ]; then
+    printf "${RED}No package name provided for installation.\n"
+    exit 1
+  fi
+  printf "${GREEN}INSTALLING ${BOLD}$2${RESET}${GREEN}...\n"
+  ftp -m -C "https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/$2/install" && chmod +x install && sh install
   printf "${GREEN}DONE\n"
   clean
 }
 
-#uninstall a package 
+# Uninstall a package 
 uninstall() {
-  printf "${RED}ARE YOU SURE YOU WANT TO REMOVE $2 (y/n)\n"
-  read i
+  if [ -z "$2" ]; then
+    printf "${RED}No package name provided for uninstallation.\n"
+    exit 1
+  fi
+  printf "${RED}ARE YOU SURE YOU WANT TO REMOVE ${BOLD}$2${RESET}${RED} (y/n)?\n"
+  read -r i
   if [ "$i" = "y" ]; then
-    ftp -m -C https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/$3/uninstall && chmod +x uninstall && sh uninstall && clean
-    printf "${RED}$2 HAS been removed\n"
+    ftp -m -C "https://raw.githubusercontent.com/hexisXz/openpkg-repo/main/$2/uninstall" && chmod +x uninstall && sh uninstall && clean
+    printf "${RED}$2 HAS BEEN REMOVED\n"
   else
-    printf "${RED}$2 has NOT been removed\n"
+    printf "${RED}$2 HAS NOT BEEN REMOVED\n"
   fi
 }
 
-#help
+# Help
 hlp() {
-  printf "${BLUE}-i (install a package)
+  printf "${BLUE}-i <package_name> (install a package)
 -h (display help commands)
--c (clean {meaning remove the install & uninstall scripts})
--R (uninstall/remove a package)
+-c (clean {remove the install & uninstall scripts})
+-R <package_name> (uninstall/remove a package)
 -v (version)\n"
 }
 
-#flags
+# Flags
 case "$1" in
-  -i) install
-  ;;
-  -R) uninstall
-  ;;
-  -C) clean
-  ;;
-  -h) hlp
-  ;;
-  -v) printf "$ver"
-  ;;
-  *) hlp
-  ;;
+  -i) install "$@" ;;
+  -R) uninstall "$@" ;;
+  -c) clean ;;
+  -h) hlp ;;
+  -v) printf "$ver\n" ;;
+  *) hlp ;;
 esac
