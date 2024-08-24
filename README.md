@@ -13,47 +13,29 @@
 
 <a id="org018ad28"></a>
 
-# **scoria**
+# **openpkg**
 
-a simple package manager that builds programs from source
+a simple openBSD package manager
 
 
 <a id="org045f10a"></a>
 
 # **how to install**
-
-copy and paste
-
-
 ```sh 
-sh <(curl -v -L https://raw.githubusercontent.com/hexisXz/scoria/main/install.sh)
+
 ```
-
-in your terminal
-
 
 <a id="org5bc342d"></a>
 
-# **scoria repo**
+# **openpkg repo**
 
 <https://github.com/hexisXz/scoria-repo>
 
 
-
-# scoria is not a replacement
-
-this is stated in the wiki but i will say it again <span class="underline">scoria is not a replacement for your distros package manager</span>. so dont remove your distros package manager or things will break.
-
-
 <a id="org0fde68a"></a>
 
-# About scoria
+# About openpkg
 
-scoria is not going to have all of the programs. it will mainly have programs that can be compiled from source witch is most things. scoria was made to automate the process of compiling programs from source so you don&rsquo;t have to.
-
+openpkg was made to make installing programs in openBSD easy
 
 <a id="org22f01f6"></a>
-
-# more info
-
-the new scoria 3.0 update includes a full rewrite of scoria in C
